@@ -3,9 +3,54 @@
 
 #include <iostream>
 
+struct TreeNode {
+	int val;
+	TreeNode* left;
+	TreeNode* right;
+	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+//构建二叉树
+void inertNode(TreeNode* node, int value) {
+	if (value <= node->val) {
+		if (!node->left) {
+			node->left = new TreeNode(value);
+		}
+		else {
+			inertNode(node->left, value);
+		}
+	}
+	else {
+		if (!node->right) {
+			node->right = new TreeNode(value);
+		}
+		else {
+			inertNode(node->right, value);
+		}
+	}
+}
+
+//前序遍历递归实现
+void preOrder(TreeNode* node) {
+	if (node) {
+		std::cout << node->val;
+		preOrder(node->left);
+		preOrder(node->right);
+	}
+
+}
+
+
 int main()
 {
-    std::cout << "Hello World!\n";
+	TreeNode treeNode(1);
+	inertNode(&treeNode, 2);
+	inertNode(&treeNode, 3);
+	inertNode(&treeNode, 4);
+	inertNode(&treeNode, 5);
+	inertNode(&treeNode, 6);
+	inertNode(&treeNode, 7);
+	preOrder(&treeNode);
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
