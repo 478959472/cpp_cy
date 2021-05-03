@@ -11,9 +11,10 @@ set(LIB_SRC
     ../sylar/util.cpp
 )
 
-add_library(sylar SHARED ${LIB_SRC})
+add_library(sylar SHARED ${LIB_SRC} "template_demo.cpp")
 # 将源代码添加到此项目的可执行文件。
-add_executable (base_learn "main.cpp"  )
+add_executable (base_learn "main.cpp")
+add_executable (template_demo "template_demo.cpp")
 
 target_link_libraries(base_learn sylar)
 
