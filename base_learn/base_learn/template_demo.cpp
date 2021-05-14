@@ -5,14 +5,14 @@ using namespace std;
 template <typename T>
 T minimum(const T& a, const T& b)
 {
-	return a < b ? a : b;
+    return a < b ? a : b;
 }
 
 int main()
 {
-	cout << "template  demo." << endl;
-	int a = 3;
-	int b = 6;
-	cout << "较小的数为：" << minimum<int>(a, b) << endl;
-	return 0;
+    cout << "template  demo." << endl;
+    int a = 3;
+    int b = 6;
+    cout << "杈冨皬鐨勬暟涓猴細" << minimum<int>(a, b) << endl;
+    return 0;
 }
