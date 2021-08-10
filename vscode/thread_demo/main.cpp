@@ -1,4 +1,8 @@
 //运行命令 g++ -o main main.cpp -lpthread && ./main
+//git : git add main.cpp 
+//git commit -m "多线程"
+//git push
+//
 #include<stdio.h>
 #include<pthread.h>
 #include<unistd.h>
